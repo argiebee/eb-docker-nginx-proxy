@@ -12,10 +12,10 @@ pipeline {
 
         stage('checkout') {
             steps {
-			    pwd
-			    ls
+			    sh 'pwd'
+			    sh 'ls'
 			    checkout scm
-				ls
+				sh 'ls'
 			}
 
         }
@@ -23,9 +23,9 @@ pipeline {
         stage('zip') {
 
             steps {
-                zip zipFile: 'eb-docker-nginx-proxy.zip', dir:'.'
-				pwd
-				ls
+                zip zipFile:'eb-docker-nginx-proxy.zip', dir:'.'
+				sh 'pwd'
+				sh 'ls'
             }
 
         }
