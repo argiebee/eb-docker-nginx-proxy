@@ -12,6 +12,7 @@ pipeline {
 
         stage('checkout') {
             steps {
+			    sh 'rm *.zip'
 			    sh 'pwd'
 			    sh 'ls'
 			    checkout scm
